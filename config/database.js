@@ -1,18 +1,15 @@
 const Sequelize = require("sequelize");
 const dotenv = require("dotenv");
 dotenv.config();
+const config = require("./config.json");
 
-// const db = new Sequelize(process.env.DATABASE_URL, {
-//   dialect: "postgres",
-//   dialectOptions: {
-//     ssl: {
-//       require: true,
-//       rejectUnauthorized: false,
-//     },
-//   },
-// });
-
-const db = new Sequelize("weathermonster", "postgres", "1234", {
+let database = config.development.database;
+let username = config.development.username;
+let password = config.development.password;
+if (process.env.NODE_ENV === "test") {
+  database = config.test.database;
+}
+const db = new Sequelize(database, username, password, {
   host: "localhost",
   dialect: "postgres",
 });

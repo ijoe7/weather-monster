@@ -4,8 +4,9 @@
   "description": "Weather Monster API",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest --runInBand --verbose --detectOpenHandles"
   },
   "repository": {
     "type": "git",
@@ -24,9 +25,11 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-handlebars": "^6.0.6",
+    "jest": "^28.1.1",
     "pg": "^8.7.3",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.21.0",
+    "supertest": "^6.2.3",
     "underscore": "^1.13.4"
   },
   "devDependencies": {
