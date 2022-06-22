@@ -1,0 +1,12 @@
+{
+    "development": {
+        "database": "weathermonster",
+        "username": "postgres",
+        "password": "1234"
+    },
+    "test": {
+        "database": "testdb",
+        "username": "postgres",
+        "password": "1234"
+    }
+}
